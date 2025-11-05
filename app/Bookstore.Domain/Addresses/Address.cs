@@ -1,4 +1,5 @@
-﻿using Bookstore.Domain.Customers;
+using Bookstore.Domain.Customers;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bookstore.Domain.Addresses
 {
@@ -23,19 +24,26 @@ namespace Bookstore.Domain.Addresses
 
         public string AddressLine1 { get; set; }
 
+        [Column("addressline2")]
         public string? AddressLine2 { get; set; }
 
+        [Column("city")]
         public string City { get; set; }
 
+        [Column("state")]
         public string State { get; set; }
 
+        [Column("country")]
         public string Country { get; set; }
 
+        [Column("zipcode")]
         public string ZipCode { get; set; }
 
+        [Column("customerid")]
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
 
+        [Column("isactive")]
         public bool IsActive { get; set; } = true;
     }
 }
